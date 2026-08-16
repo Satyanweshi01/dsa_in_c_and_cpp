@@ -54,3 +54,4 @@ dkms.conf
 # debug information files
 *.dwo
 /c_to_cpp/bin
+/c_to_cpp/oop_in_c++/bin
