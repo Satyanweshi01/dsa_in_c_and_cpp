@@ -15,10 +15,17 @@ void printing(int a)
 {
     for (int i = 0; i<a; i++)
     {
-        for (int j = 0; j<i+1; j++)
+        for (int k = a-1-i; k>0; k--)
         {
-            char ch = 'A'+i;
-            cout << ch << " ";
+            cout << " ";
+        }
+        //char ch = '@';  
+        char ch = 'A';  
+        for (int j = 0; j<(2*i +1); j++)
+        {
+            cout << ch;
+            if (j < i) ch++; 
+            else ch--;
         }
         cout << "\n";
     }
