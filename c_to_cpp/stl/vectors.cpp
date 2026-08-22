@@ -12,7 +12,7 @@ int main()
     v.push_back(15);
     v.push_back(21);
 
-
+    cout << v.back() << " " << v.front() << endl; 
     vector<int>::iterator it = v.begin();
     cout << "memory address - " << &(*it) << endl;
     cout << "actual value - "<< *(it) << endl; 
@@ -24,31 +24,40 @@ int main()
         cout << *(it) << " ";
     }
     cout << "\n";
+    v.pop_back();
     // for (vector<int>::iterator it = v.begin(); *(it) != v.back(); it++)
     // {
     //     cout << *(it)<< " ";
     // }
     // cout << "\n";
+    
     //deletion in vector
+    //v.erase(v.begin()+1);
+    //v.erase(v.begin()+1,v.begin()+3);
 
     for (auto it = v.begin(); it != v.end(); it++)
     {
 	    cout << *(it) << " ";
     }
     cout << "\n";
-    
+    v.insert(v.begin(),300); //(address, element)
+
     for (int a:v) 
     {
 	cout << a << " ";
     }
     cout << "\n";
-
+    v.insert(v.begin()+2, 2, 10); //(address, times, element)
     for (auto a:v) 
     {
 	cout << a << " ";
     }
     cout << "\n";
+    v.clear();
 
+    cout << v.empty();
+
+    cout << "\n";
     // pair vector
     vector<pair<int,int>> vec_pair;
 
