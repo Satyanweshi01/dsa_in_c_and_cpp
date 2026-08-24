@@ -56,3 +56,4 @@ dkms.conf
 /c_to_cpp/bin
 /c_to_cpp/oop_in_c++/bin
 /loop_patterns/bin
+/c_to_cpp/stl/bin
