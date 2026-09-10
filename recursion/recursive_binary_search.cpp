@@ -23,12 +23,13 @@ int main(void)
 int recursive_binary_search(int *arr, int start,int end, int key)
 {
     if (start>end) return -1;
-    
+    else
+    {
     int mid = (start+end)/2;
 
     if (arr[mid] == key) return mid;
-    if (arr[mid] < key) return recursive_binary_search(arr, mid+1, end, key);
+    else if (arr[mid] < key) return recursive_binary_search(arr, mid+1, end, key);
     else return recursive_binary_search(arr, start, mid-1, key);
-
-    if (start>end) return -1;
+    }
+    
 }
