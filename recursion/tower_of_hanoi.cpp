@@ -38,7 +38,7 @@ void tower_of_hanoi(int source[], int auxiliary[] ,int destination[], int disc_c
     print_tower(auxiliary, "Auxiliary Tower: ");
     print_tower(destination, "Destination Tower: ");
     cout << "\n";
-    if (disc_count == 1){
+    if (disc_count == 0){
 
 
         destination[0] = source[0];
@@ -53,6 +53,10 @@ void tower_of_hanoi(int source[], int auxiliary[] ,int destination[], int disc_c
     // destination[0] = source[0];
     // source[0] = 0;
     tower_of_hanoi(source,auxiliary,destination,disc_count-1);
+
+    destination[0] = source[0];
+    source[0] = 0;
+
     tower_of_hanoi(auxiliary,destination,source,disc_count-1);
     
 }
