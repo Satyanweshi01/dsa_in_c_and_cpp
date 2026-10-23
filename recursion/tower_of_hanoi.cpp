@@ -12,7 +12,7 @@ int c[MAX] = {0,0,0,0,0};
 
 
 void print_tower(int array[],string tower_name);
-void disc_tower(int source[], int auxiliary[] ,int destination[], int disc_count)
+void tower_of_hanoi(int source[], int auxiliary[] ,int destination[], int disc_count);
 
 int main(void)
 {
@@ -27,22 +27,34 @@ int main(void)
         disc_weight--;
     }
     
-    disc_tower(a,b,c,discs);
+    tower_of_hanoi(a,b,c,discs);
     return 0;
 }
 
-void disc_tower(int source[], int auxiliary[] ,int destination[], int disc_count)
+void tower_of_hanoi(int source[], int auxiliary[] ,int destination[], int disc_count)
 {
-    if (disc_count < 1){
-        cout<< "Transfer done";
+    cout << "Previous state\n";
+    print_tower(source, "Source Tower: ");
+    print_tower(auxiliary, "Auxiliary Tower: ");
+    print_tower(destination, "Destination Tower: ");
+    cout << "\n";
+    if (disc_count == 1){
+
+
+        destination[0] = source[0];
+        source[0] = 0;
+        cout << "Current state\n";
         print_tower(source, "Source Tower: ");
         print_tower(auxiliary, "Auxiliary Tower: ");
         print_tower(destination, "Destination Tower: ");
+        return;
     }
     // for the case of disc_count == 1
-    destination[0] = source[0];
-    source[0] = 0;
-    // 
+    // destination[0] = source[0];
+    // source[0] = 0;
+    tower_of_hanoi(source,auxiliary,destination,disc_count-1);
+    tower_of_hanoi(auxiliary,destination,source,disc_count-1);
+    
 }
 
 void print_tower(int array[],string tower_name)
