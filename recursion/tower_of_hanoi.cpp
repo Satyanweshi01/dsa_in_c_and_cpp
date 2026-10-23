@@ -11,7 +11,8 @@ int b[MAX] = {0,0,0,0,0};
 int c[MAX] = {0,0,0,0,0};
 
 
-void print_tower(int array[],int disc_count);
+void print_tower(int array[],string tower_name);
+void disc_tower(int source[], int auxiliary[] ,int destination[], int disc_count)
 
 int main(void)
 {
@@ -26,14 +27,30 @@ int main(void)
         disc_weight--;
     }
     
-    print_tower(a,discs);
+    disc_tower(a,b,c,discs);
     return 0;
 }
 
-void print_tower(int array[],int disc_count)
+void disc_tower(int source[], int auxiliary[] ,int destination[], int disc_count)
 {
+    if (disc_count < 1){
+        cout<< "Transfer done";
+        print_tower(source, "Source Tower: ");
+        print_tower(auxiliary, "Auxiliary Tower: ");
+        print_tower(destination, "Destination Tower: ");
+    }
+    // for the case of disc_count == 1
+    destination[0] = source[0];
+    source[0] = 0;
+    // 
+}
+
+void print_tower(int array[],string tower_name)
+{
+    cout << tower_name;
     for (int i = 0; i< MAX; i++)
     {
         cout << array[i] << " ";
     }
+    cout << "\n";
 }
