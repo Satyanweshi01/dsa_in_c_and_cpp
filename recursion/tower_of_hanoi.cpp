@@ -4,11 +4,11 @@ using namespace std;
 #define MAX 5
 // three global array representing towers
 // Source tower
-int a[MAX] = {0,0,0,0,0};
+int a[MAX] = {0}; // these way of decleration will lead to a array with all consisting zero element.
 // Auxiliary tower
-int b[MAX] = {0,0,0,0,0};
+int b[MAX] = {0};
 // Destination tower
-int c[MAX] = {0,0,0,0,0};
+int c[MAX] = {0};
 
 
 void print_tower(int array[],string tower_name);
